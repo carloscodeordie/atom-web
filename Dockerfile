@@ -16,7 +16,7 @@ RUN ng build --configuration production
 FROM nginx:stable-alpine
 
 # Copy build output from previous stage to nginx
-COPY --from=builder /app/dist/atom-web /usr/share/nginx/html
+COPY --from=builder /app/dist /usr/share/nginx/html
 
 # Optional: Replace nginx default config (for SPA routing)
 COPY nginx.conf /etc/nginx/conf.d/default.conf
