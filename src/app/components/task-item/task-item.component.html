@@ -1,0 +1,79 @@
+<div class="task-item-container">
+  <div
+    class="content"
+    [ngClass]="{
+      done: task.status === 'Completed'
+    }"
+  >
+    <div class="task-details">
+      <div>
+        @if(isOpen) {
+        <input
+          type="text"
+          placeholder="Enter task name"
+          [(ngModel)]="task.name"
+        />
+        } @else {
+        <p class="title">{{ task.name }}</p>
+        }
+      </div>
+      <div>
+        @if(isOpen) {
+        <input
+          type="text"
+          placeholder="Enter task description"
+          [(ngModel)]="task.description"
+        />
+        } @else {
+        <p>{{ task.description }}</p>
+        }
+      </div>
+      <div>
+        <p>{{ task.creationDate }}</p>
+      </div>
+    </div>
+    <div class="task-actions">
+      @if(isOpen) {
+      <button (click)="saveTask(task)" class="icon save">
+        <mat-icon
+          aria-hidden="false"
+          aria-label="Save task"
+          fontIcon="save"
+        ></mat-icon>
+      </button>
+      } @else {
+      <button (click)="openEditTask()" class="icon edit">
+        <mat-icon
+          aria-hidden="false"
+          aria-label="Edit task"
+          fontIcon="edit"
+        ></mat-icon>
+      </button>
+      <button (click)="deleteTask(task)" class="icon delete">
+        <mat-icon
+          aria-hidden="false"
+          aria-label="Delete task"
+          fontIcon="delete"
+        ></mat-icon>
+      </button>
+
+      @if(task.status === "Pending") {
+      <button (click)="completeTask(task)" class="icon complete">
+        <mat-icon
+          aria-hidden="false"
+          aria-label="Complete task"
+          fontIcon="done"
+        ></mat-icon>
+      </button>
+      } @else {
+      <button (click)="undoTask(task)" class="icon undo">
+        <mat-icon
+          aria-hidden="false"
+          aria-label="Undo task"
+          fontIcon="undo"
+        ></mat-icon>
+      </button>
+      } }
+    </div>
+  </div>
+</div>

@@ -1,0 +1,33 @@
+@import "../../variables";
+
+.header-container {
+  background-color: $background-color;
+  border-bottom-width: 1px;
+  border-bottom-color: $secondary-color;
+
+  margin: auto;
+  padding: 1rem;
+
+  .content {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+    .header > .title {
+      color: $primary-color;
+      font-size: 1.5rem;
+      font-weight: 700;
+      line-height: 2rem;
+    }
+
+    .actions > .logout {
+      background-color: $background-color;
+      border: 1px solid $secondary-color;
+      border-radius: 8px;
+      color: $secondary-color;
+      cursor: pointer;
+      height: 2rem;
+      padding: 0 0.75rem;
+    }
+  }
+}

@@ -1,0 +1,43 @@
+<section class="signup-form-container">
+  <div class="content">
+    <div class="header">
+      <h3>CREATE ACCOUNT</h3>
+      <p class="details">Enter your details to create an account</p>
+    </div>
+    <div class="form">
+      <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
+        <div class="form-element">
+          <label htmlFor="email">Email</label>
+          <input
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+            type="email"
+            [(ngModel)]="user.email"
+            #email="ngModel"
+          />
+        </div>
+        <div class="form-element">
+          <label htmlFor="password">Password</label>
+          <input
+            id="password"
+            minlength="6"
+            name="password"
+            placeholder="Enter your password"
+            required
+            type="password"
+            [(ngModel)]="user.password"
+            #email="ngModel"
+          />
+        </div>
+        <div class="actions">
+          <button [disabled]="loginForm.invalid">SIGN UP</button>
+        </div>
+      </form>
+    </div>
+    <div class="login">
+      <p>Already have an account? <a href="/signin">Sign in</a></p>
+    </div>
+  </div>
+</section>

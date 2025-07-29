@@ -1,0 +1,77 @@
+@import "../../variables";
+
+.task-item-container {
+  border: 1px solid $secondary-color;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 1rem;
+
+    .task-details {
+      color: $secondary-color;
+      p {
+        margin: 0;
+      }
+
+      p.title {
+        color: $primary-color;
+        margin-bottom: 0.5rem;
+      }
+
+      input {
+        background-color: $background-color;
+        border: 1px solid $secondary-color;
+        border-radius: 4px;
+        color: $primary-color;
+        width: 20rem;
+      }
+
+      input:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 1000px $background-color inset;
+        -webkit-text-fill-color: $primary-color;
+        transition: background-color 5000s ease-in-out 0s;
+      }
+    }
+
+    .task-actions {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+
+      .icon {
+        border-radius: 4px;
+        cursor: pointer;
+        height: 3rem;
+        margin-left: 1rem;
+        width: 3rem;
+      }
+
+      .icon.complete {
+        background-color: $actions-color;
+        border: 1px solid $actions-color;
+      }
+
+      .icon.edit {
+        background-color: $secondary-color;
+        border: 1px solid $secondary-color;
+      }
+
+      .icon.delete {
+        background-color: $warning-color;
+        border: 1px solid $warning-color;
+      }
+
+      .icon.save {
+        background-color: $actions-color;
+        border: 1px solid $actions-color;
+      }
+    }
+  }
+
+  .content.done {
+    background-color: $done-color;
+  }
+}

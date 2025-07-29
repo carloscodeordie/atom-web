@@ -1,0 +1,81 @@
+@import "../../variables";
+
+.task-list-container {
+  .task-list-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .title {
+      color: $primary-color;
+    }
+
+    .add-button {
+      background-color: $actions-color;
+      border: 1px solid $actions-color;
+      border-radius: 8px;
+      color: $primary-color;
+      cursor: pointer;
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+    }
+
+    .hide-button {
+      background-color: $secondary-color;
+      border: 1px solid $actions-color;
+      border-radius: 8px;
+      color: $primary-color;
+      cursor: pointer;
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+    }
+  }
+
+  .new-task {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0;
+
+    .task-element {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 1rem;
+
+      label {
+        color: $secondary-color;
+      }
+
+      input {
+        background-color: $background-color;
+        border: 1px solid $secondary-color;
+        border-radius: 4px;
+        color: $primary-color;
+        height: 2rem;
+        margin-top: 0.5rem;
+        width: 30rem;
+      }
+      input:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0 1000px $background-color inset;
+        -webkit-text-fill-color: $primary-color;
+        transition: background-color 5000s ease-in-out 0s;
+      }
+    }
+
+    .add-button {
+      button {
+        background-color: $actions-color;
+        border: 1px solid $actions-color;
+        border-radius: 4px;
+        color: $primary-color;
+        cursor: pointer;
+        padding: 0.5rem 1rem;
+        width: 30rem;
+      }
+      button:disabled {
+        background-color: $secondary-color;
+        border: 1px solid $secondary-color;
+      }
+    }
+  }
+}
